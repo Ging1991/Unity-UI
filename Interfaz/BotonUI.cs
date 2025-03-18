@@ -5,6 +5,8 @@ namespace Ging1991.UI {
 
 	public class BotonUI : TemaUI {
 
+		public GameObject candado;
+
 		public override void SetColorRelleno(Color color) {
 			transform.GetChild(0).GetComponent<Image>().color = color;
 		}
@@ -15,6 +17,12 @@ namespace Ging1991.UI {
 
 		public override void SetColorBorde(Color color) {
 			GetComponent<Image>().color = color;
+		}
+
+		public void Bloquear(bool bloqueado) {
+			GetComponentInChildren<Button>().interactable = !bloqueado;
+			if (candado != null)
+				candado.SetActive(bloqueado);
 		}
 
 	}
