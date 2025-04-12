@@ -5,7 +5,7 @@ namespace Ging1991.UI.Temas {
 
 	public class Tema {
 
-		private Dictionary<string, Color> colores;
+		private readonly Dictionary<string, Color> colores;
 
 		public Tema () {
 			colores = new Dictionary<string, Color>();
@@ -21,6 +21,14 @@ namespace Ging1991.UI.Temas {
 			
 			Debug.LogWarning("Color no encontrado: " + codigo);
 			return Color.white;
+		}
+
+		public void AplicarTema() {
+			foreach (var componente in GameObject.FindObjectsOfType<MonoBehaviour>(true)) {
+				if (componente is ITematizable tematizable) {
+					tematizable.AplicarTema(this);
+				}
+			}
 		}
 
 	}
