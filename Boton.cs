@@ -5,13 +5,15 @@ namespace Ging1991.UI {
 
 	public class Boton : MarcoConTexto {
 
-		public GameObject candado;
+		public GameObject candadoOBJ;
+
 
 		public void Bloquear(bool bloqueado) {
 			GetComponentInChildren<Button>().interactable = !bloqueado;
-			if (candado != null)
-				candado.SetActive(bloqueado);
+			if (candadoOBJ != null)
+				candadoOBJ.SetActive(bloqueado);
 		}
+
 
 	}
 

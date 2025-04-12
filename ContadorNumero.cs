@@ -4,11 +4,13 @@ namespace Ging1991.UI {
 
 		public int valor;
 
+
 		public void SetValor(int valor) {
 			this.valor = valor;
 			SetTexto($"{valor}");
 		}
 		
+
 	}
 
 }

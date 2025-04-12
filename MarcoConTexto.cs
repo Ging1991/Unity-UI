@@ -13,14 +13,19 @@ namespace Ging1991.UI {
 			textoOBJ.GetComponent<Text>().color = color;
 		}
 
+
 		public void SetTexto(string texto) {
 			textoOBJ.GetComponent<Text>().text = texto;
 		}
 
+
 		public override void AplicarTema(Tema tema) {
-			base.AplicarTema(tema);
-			SetColorTexto(tema.TraerColor(temaTexto));
+			if (!esPersonalizado) {
+				base.AplicarTema(tema);
+				SetColorTexto(tema.TraerColor(temaTexto));
+			}
 		}
+
 
 	}
 

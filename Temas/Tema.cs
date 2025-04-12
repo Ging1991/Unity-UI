@@ -11,9 +11,11 @@ namespace Ging1991.UI.Temas {
 			colores = new Dictionary<string, Color>();
 		}
 
+
 		public void AgregarColor(string codigo, Color color) {
 			colores.Add(codigo, color);
 		}
+
 
 		public Color TraerColor(string codigo) {
 			if (colores.ContainsKey(codigo))
@@ -23,13 +25,6 @@ namespace Ging1991.UI.Temas {
 			return Color.white;
 		}
 
-		public void AplicarTema() {
-			foreach (var componente in GameObject.FindObjectsOfType<MonoBehaviour>(true)) {
-				if (componente is ITematizable tematizable) {
-					tematizable.AplicarTema(this);
-				}
-			}
-		}
 
 	}
 

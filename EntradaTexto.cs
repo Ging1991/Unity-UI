@@ -7,10 +7,12 @@ namespace Ging1991.UI {
 
 		public GameObject entradaOBJ;
 
+
 		public override void SetColorTexto(Color color) {
 			entradaOBJ.GetComponent<Text>().color = color;
 			textoOBJ.GetComponent<Text>().color = color;
 		}
+
 
 	}
 

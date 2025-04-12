@@ -13,10 +13,19 @@ namespace Ging1991.UI {
 			GetComponent<Image>().color = color;
 		}
 
-		public override void AplicarTema(Tema tema) {
-			base.AplicarTema(tema);
-			SetColorBorde(tema.TraerColor(temaBorde));
+
+		public override void SetColorRelleno(Color color) {
+			rellenoOBJ.GetComponent<Image>().color = color;
 		}
+
+
+		public override void AplicarTema(Tema tema) {
+			if (!esPersonalizado) {
+				base.AplicarTema(tema);
+				SetColorBorde(tema.TraerColor(temaBorde));				
+			}
+		}
+
 
 	}
 
