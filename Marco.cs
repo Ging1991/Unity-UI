@@ -9,6 +9,10 @@ namespace Ging1991.UI {
 		public string temaBorde;
 		public GameObject rellenoOBJ;
 
+        void Start() {
+			FindObjectOfType<TemaControl>().AplicarTemaPrincipal(this);
+        }
+
 		public void SetColorBorde(Color color) {
 			GetComponent<Image>().color = color;
 		}
